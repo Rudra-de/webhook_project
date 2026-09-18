@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Webhook Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Webhook Dashboard</h1>
+
+        <!-- Send Webhook Form -->
+        <div class="card">
+
+            <h2>Send Webhook</h2>
+
+            <form id="webhookForm">
+
+                <label for="event">Event</label>
+                <input
+                    type="text"
+                    id="event"
+                    placeholder="task.completed"
+                    required
+                >
+
+                <label for="referenceId">Reference ID</label>
+                <input
+                    type="text"
+                    id="referenceId"
+                    placeholder="TASK-101"
+                    required
+                >
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    placeholder="Task completed successfully"
+                    required
+                ></textarea>
+
+                <button type="submit">Send Webhook</button>
+
+            </form>
+
+            <!-- Response will appear here -->
+            <div id="response"></div>
+
+        </div>
+
+
+        <!-- Webhook Logs -->
+        <div class="card">
+
+            <h2>Webhook Logs</h2>
+
+            <button id="loadLogs">Load Logs</button>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Reference ID</th>
+                            <th>Status</th>
+                            <th>Status Code</th>
+                            <th>Received At</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="logsTableBody">
+                        <!-- Logs will be added here by JavaScript -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
